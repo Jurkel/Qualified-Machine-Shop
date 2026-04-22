@@ -53,7 +53,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#fogbuster" class="nav-highlight">FogBuster</a></li>
+          <li><a href="#fogbuster">FogBuster</a></li>
           <li><a href="#gallery">Gallery</a></li>
         </ul>
       </nav>
@@ -303,7 +303,7 @@
               <i data-feather="mail"></i>
               <div>
                 <strong>Email</strong>
-                <a href="mailto:info@qualifiedmachineshop.com">info@qualifiedmachineshop.com</a>
+                <a href="mailto:dee@qualifiedmachineshop.com">dee@qualifiedmachineshop.com</a>
               </div>
             </div>
             <div class="contact-method">
@@ -328,31 +328,31 @@
         </div>
         
         <div class="contact-form-wrapper reveal delay-2">
-          <form class="contact-form">
+          <form class="contact-form" id="quote-form">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" required placeholder="John Doe">
+                <input type="text" id="name" name="name" required placeholder="John Doe">
               </div>
               <div class="form-group">
                 <label for="company">Company</label>
-                <input type="text" id="company" placeholder="Acme Engineering">
+                <input type="text" id="company" name="company" placeholder="Acme Engineering">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" required placeholder="john@example.com">
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
               </div>
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" placeholder="(555) 000-0000">
+                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
               </div>
             </div>
             <div class="form-group">
               <label for="job-type">Type of Job</label>
               <div class="select-wrapper">
-                <select id="job-type" required>
+                <select id="job-type" name="jobType" required>
                   <option value="" disabled selected>Select a job type</option>
                   <option value="milling">CNC Milling</option>
                   <option value="turning">Turning</option>
@@ -364,14 +364,14 @@
             </div>
             <div class="form-group">
               <label for="description">Project Description</label>
-              <textarea id="description" rows="4" required placeholder="Tell us about the part, tolerances, materials, and quantity..."></textarea>
+              <textarea id="description" name="description" rows="4" required placeholder="Tell us about the part, tolerances, materials, and quantity..."></textarea>
             </div>
             <div class="form-group file-upload-group">
               <label for="file-upload" class="file-upload-label">
                 <i data-feather="upload-cloud"></i>
                 <span>Upload Drawings/Prints (.pdf, .step, .dwg)</span>
               </label>
-              <input type="file" id="file-upload" class="hidden-file-input">
+              <input type="file" id="file-upload" name="file" class="hidden-file-input">
             </div>
             <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
           </form>

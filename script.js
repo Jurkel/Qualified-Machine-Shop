@@ -95,6 +95,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Quote Form Submission
+    const quoteForm = document.getElementById('quote-form');
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = quoteForm.querySelector('[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+
+            try {
+                const data = new FormData(quoteForm);
+                const res = await fetch('/submit', { method: 'POST', body: data });
+                const json = await res.json();
+
+                if (res.ok && json.ok) {
+                    quoteForm.innerHTML = '<p style="text-align:center;padding:2rem;font-size:1.1rem;">Thanks! We\'ll be in touch within 24 hours.</p>';
+                } else {
+                    alert(json.error || 'Something went wrong. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            } catch {
+                alert('Network error. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    }
+
     // Gallery Filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');

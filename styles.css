@@ -226,8 +226,7 @@ p {
   font-size: 0.95rem;
   color: var(--text-muted);
 }
-.desktop-nav a:hover,
-.desktop-nav a.nav-highlight {
+.desktop-nav a:hover {
   color: var(--accent-orange);
 }
 
